@@ -24,7 +24,7 @@ export default function ContactPage() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -32,7 +32,7 @@ export default function ContactPage() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     
@@ -174,7 +174,7 @@ export default function ContactPage() {
             width="100%" 
             height="100%" 
             style={{ border: 0 }} 
-            allowFullScreen
+            allowFullScreen={true}
             loading="lazy" 
             referrerPolicy="no-referrer-when-downgrade"
             title="dheemit location map"

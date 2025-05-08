@@ -161,8 +161,8 @@ export default function ProductsPage() {
 
   const handleAddProduct = () => {
     const newProduct: Product = {
-      id: `new-${Date.now().toString()}`,
       ...formData as Product,
+      id: `new-${Date.now().toString()}`
     };
     
     setProducts([...products, newProduct]);
